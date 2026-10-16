@@ -1,4 +1,9 @@
 package co.edu.uniquindio.poo.parcial2.model;
 
-public class ElementoServicio {
+public interface ElementoServicio {
+    String nombre();
+
+    double costo();
+
+    String mostrarElemento();
 }
