@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial2.controller.InicioController">
+    <top>
+        <VBox spacing="4">
+            <padding>
+                <Insets bottom="14" left="20" right="20" top="14" />
+            </padding>
+            <Label text="TechSolutions">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Label text="Servicios tecnológicos para pequeñas y medianas empresas" />
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="22">
+            <Label fx:id="lblResumen" minHeight="-Infinity" wrapText="true" />
+            <GridPane alignment="CENTER" hgap="18" vgap="18">
+                <Button fx:id="btnServicios" alignment="CENTER_LEFT" contentDisplay="GRAPHIC_ONLY" onAction="#abrirServicios" prefHeight="84" prefWidth="380" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <graphic>
+                        <VBox spacing="4">
+                            <Label text="Servicios tecnológicos">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label text="Consultar, crear y personalizar servicios" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnPaquetes" alignment="CENTER_LEFT" contentDisplay="GRAPHIC_ONLY" onAction="#abrirPaquetes" prefHeight="84" prefWidth="380" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <graphic>
+                        <VBox spacing="4">
+                            <Label text="Paquetes tecnológicos">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label text="Armar paquetes y calcular su costo" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnSolicitudes" alignment="CENTER_LEFT" contentDisplay="GRAPHIC_ONLY" onAction="#abrirSolicitudes" prefHeight="84" prefWidth="380" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <graphic>
+                        <VBox spacing="4">
+                            <Label text="Solicitudes de servicio">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label text="Registrar y consultar solicitudes de clientes" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnTecnicos" alignment="CENTER_LEFT" contentDisplay="GRAPHIC_ONLY" onAction="#abrirTecnicos" prefHeight="84" prefWidth="380" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <graphic>
+                        <VBox spacing="4">
+                            <Label text="Técnicos y costos">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <Label text="Consultar técnicos, calcular costos y confirmar" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </GridPane>
+        </VBox>
+    </center>
+</BorderPane>
