@@ -10,8 +10,13 @@ public abstract class DecoradorServicio implements ElementoServicio{
     public DecoradorServicio(ElementoServicio elementoServicio){
         this.elementoServicio = elementoServicio;
     }
+
+    /**
+     * Metodo que muestra el nombre y el costo del elemento decorado
+     * @return
+     */
     @Override
-    public void mostrarElemento (String identacion){
-        System.out.println(identacion + "-" + nombre() + " $" + costo());
+    public String mostrarElemento (){
+        return nombre() + " - Costo: $" + costo();
     }
 }
