@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.parcial2.Services;
+package co.edu.uniquindio.poo.parcial2.services;
 
 import co.edu.uniquindio.poo.parcial2.model.ElementoServicio;
 import co.edu.uniquindio.poo.parcial2.model.ProveedorTecnicos;
@@ -15,6 +15,15 @@ public class SolicitudService {
      */
     public SolicitudService(ProveedorTecnicos proveedorTecnicos){
         this.proveedorTecnicos = proveedorTecnicos;
+    }
+
+    /**
+     * Metodo que consulta el tecnico de una especialidad
+     * @param especialidad
+     * @return
+     */
+    public Tecnico consultarTecnico(String especialidad){
+        return proveedorTecnicos.consultarTecnico(especialidad);
     }
 
     /**
@@ -37,7 +46,7 @@ public class SolicitudService {
     }
 
     /**
-     * Metodo que confirma la solicitud,si ees presencial y no hay tecnico, la solicitud no se confirma
+     * Metodo que confirma la solicitud, si es presencial y no hay tecnico, la solicitud no se confirma
      * @param solicitud
      * @return
      */

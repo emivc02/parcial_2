@@ -7,13 +7,18 @@ public abstract class Servicio implements ElementoServicio{
     private String descripcion;
     private double costoBase;
 
-
+    /**
+     * Metodo constructor de la clase Servicio
+     * @param codigo
+     * @param nombre
+     * @param descripcion
+     * @param costoBase
+     */
     public Servicio(String codigo, String nombre, String descripcion, double costoBase) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.costoBase = costoBase;
-
     }
 
     public String getCodigo() {
@@ -40,7 +45,6 @@ public abstract class Servicio implements ElementoServicio{
         return costoBase;
     }
 
-
     @Override
     public String toString() {
         return "Servicio{" +
@@ -61,8 +65,12 @@ public abstract class Servicio implements ElementoServicio{
         return costoBase;
     }
 
+    /**
+     * Metodo que muestra la informacion del servicio
+     * @return
+     */
     @Override
     public String mostrarElemento() {
-        return String.format("%s - %s (%s): $%,.0f", codigo, nombre, descripcion, costo());
+        return codigo + " - " + nombre + " (" + descripcion + "): $" + costo();
     }
 }
