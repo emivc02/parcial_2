@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.parcial2.model;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.logging.Logger;
@@ -29,4 +30,19 @@ class LegacySupportAdapterTest {
         LOG.info("Fin Test Obtener Codigo Especialidad");
     }
 
+    /**
+     * Test para verificar que el metodo consultarTecnico convierta la respuesta de LegacySupport en un Tecnico
+     */
+    @Test
+    void consultarTecnico() {
+        LOG.info("Inicio Test Consultar Tecnico");
+
+        LegacySupportAdapter adapter = new LegacySupportAdapter(new LegacySupport());
+        Tecnico tecnico = adapter.consultarTecnico("MANTENIMIENTO");
+        String resultadoEsperado = "TEC-105";
+        String resultadoReal = tecnico.getIdTecnico();
+        Assertions.assertEquals(resultadoEsperado, resultadoReal);
+
+        LOG.info("Fin Test Consultar Tecnico");
+    }
 }
