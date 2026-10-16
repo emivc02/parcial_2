@@ -50,4 +50,5 @@ public class LegacySupportAdapter implements  ProveedorTecnicos{
         }
         return codigo;
     }
+
 }
