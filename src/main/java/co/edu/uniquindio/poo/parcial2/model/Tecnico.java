@@ -5,12 +5,20 @@ public class Tecnico {
     private boolean disponible;
     private double costoDesplazamiento;
 
+    /**
+     * Metodo Constructor de la clase Tecnico
+     * @param idTecnico
+     * @param disponible
+     * @param costoDesplazamiento
+     */
     public Tecnico (String idTecnico, boolean disponible, double costoDesplazamiento){
         this.idTecnico = idTecnico;
         this.disponible = disponible;
         this.costoDesplazamiento = costoDesplazamiento;
     }
-
+/*
+Getter y Setter
+ */
     public String getIdTecnico() {
         return idTecnico;
     }
@@ -35,6 +43,10 @@ public class Tecnico {
         this.costoDesplazamiento = costoDesplazamiento;
     }
 
+    /**
+     * Metodo toString de la clase Tecnico
+     * @return
+     */
     @Override
     public String toString() {
         return "Tecnico{" +
