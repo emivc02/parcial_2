@@ -5,12 +5,22 @@ public class Cliente {
     private String nombre;
     private String correo;
 
+    /**
+     * Metodo constructor de la clase Cliente
+     * @param documento
+     * @param nombre
+     * @param correo
+     */
     public Cliente (String documento, String  nombre, String correo) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
     }
 
+
+    /*
+    Get y Set
+     */
     public String getDocumento() {
         return documento;
     }
@@ -35,6 +45,10 @@ public class Cliente {
         this.correo = correo;
     }
 
+    /**
+     * Metodo toString de la clase Cliente
+     * @return
+     */
     @Override
     public String toString() {
         return "Cliente{" +

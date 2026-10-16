@@ -1,6 +1,12 @@
 package co.edu.uniquindio.poo.parcial2.model;
 
 public class LegacySupport {
+
+    /**
+     * Metodo para consultar el tecnico dependiendo de su codigo de especialidad
+     * @param codigoEspecialidad
+     * @return
+     */
     public String consultarTecnico (int codigoEspecialidad) {
         String respuesta = "";
         switch (codigoEspecialidad) {
