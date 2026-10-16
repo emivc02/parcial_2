@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial2.controller.TecnicosController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets bottom="14" left="20" right="20" top="14" />
+            </padding>
+            <Label text="Técnicos y costos">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnVolver" onAction="#volverInicio" text="Volver al inicio" />
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="16" />
+            </padding>
+            <VBox minWidth="330" prefWidth="330" spacing="10">
+                <Label text="Consultar técnico">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label text="Consulta la disponibilidad en la plataforma LegacySupport." wrapText="true" />
+                <ComboBox fx:id="cmbEspecialidad" maxWidth="Infinity" promptText="Especialidad" />
+                <Button fx:id="btnConsultar" maxWidth="Infinity" onAction="#consultarTecnico" text="Consultar técnico" />
+                <VBox spacing="6">
+                    <Label fx:id="lblTecnicoId" text="Técnico: sin consultar" />
+                    <Label fx:id="lblTecnicoEstado" text="Disponibilidad: sin consultar" />
+                    <Label fx:id="lblTecnicoDesplazamiento" text="Desplazamiento: sin consultar" />
+                </VBox>
+            </VBox>
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <Label text="Solicitudes">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tablaSolicitudes" minHeight="150" prefHeight="200">
+                    <columns>
+                        <TableColumn fx:id="colCodigo" minWidth="70" text="Código" />
+                        <TableColumn fx:id="colCliente" minWidth="150" text="Cliente" />
+                        <TableColumn fx:id="colAtencion" minWidth="150" text="Atención" />
+                        <TableColumn fx:id="colEstado" minWidth="90" text="Estado" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <Label text="Costo de la solicitud">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TextArea fx:id="txtDesglose" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                <HBox alignment="CENTER_RIGHT">
+                    <Button fx:id="btnConfirmar" onAction="#confirmarSolicitud" text="Confirmar solicitud" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

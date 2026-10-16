@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial2.controller.ServiciosController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets bottom="14" left="20" right="20" top="14" />
+            </padding>
+            <Label text="Servicios tecnológicos">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnVolver" onAction="#volverInicio" text="Volver al inicio" />
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="16" />
+            </padding>
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <Label text="Catálogo de servicios">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tablaCatalogo" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCodigo" minWidth="70" prefWidth="75" text="Código" />
+                        <TableColumn fx:id="colNombre" minWidth="150" prefWidth="200" text="Servicio" />
+                        <TableColumn fx:id="colDescripcion" minWidth="200" prefWidth="330" text="Descripción" />
+                        <TableColumn fx:id="colCosto" minWidth="80" prefWidth="90" text="Costo base" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <Label text="Crear servicio">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <ComboBox fx:id="cmbTipo" prefWidth="220" promptText="Tipo de servicio" />
+                    <TextField fx:id="txtCodigo" prefWidth="100" promptText="Código" />
+                    <Button fx:id="btnCrear" onAction="#crearServicio" text="Crear servicio" />
+                </HBox>
+            </VBox>
+            <VBox minWidth="380" prefWidth="380" spacing="10">
+                <Label text="Personalizar el servicio seleccionado">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label minHeight="-Infinity" text="Marca las características que quieres sumar. El servicio del catálogo no cambia." wrapText="true" />
+                <CheckBox fx:id="chkPrioritaria" onAction="#actualizarCostos" text="Atención prioritaria" />
+                <CheckBox fx:id="chkSoporte" onAction="#actualizarCostos" text="Soporte técnico 30 días" />
+                <CheckBox fx:id="chkDomicilio" onAction="#actualizarCostos" text="Atención a domicilio" />
+                <VBox spacing="6">
+                    <Label fx:id="lblCostoBase" text="Costo base" />
+                    <Label fx:id="lblIncrementos" minHeight="-Infinity" text="Incrementos" wrapText="true" />
+                    <Label fx:id="lblCostoFinal" text="Costo final">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                </VBox>
+                <Button fx:id="btnGuardar" maxWidth="Infinity" onAction="#guardarPersonalizado" text="Guardar servicio personalizado" />
+                <Label text="Servicios personalizados guardados">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="listaPersonalizados" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

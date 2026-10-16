@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial2.controller.PaquetesController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets bottom="14" left="20" right="20" top="14" />
+            </padding>
+            <Label text="Paquetes tecnológicos">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnVolver" onAction="#volverInicio" text="Volver al inicio" />
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="16" />
+            </padding>
+            <VBox minWidth="400" prefWidth="400" spacing="10">
+                <Label text="Crear paquete">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <TextField fx:id="txtNombre" promptText="Nombre del paquete" HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnCrear" onAction="#crearPaquete" text="Crear paquete" />
+                </HBox>
+                <Label text="Agregar componentes">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets top="14" />
+                    </padding>
+                </Label>
+                <Label text="Paquete" />
+                <ComboBox fx:id="cmbPaquetes" maxWidth="Infinity" onAction="#mostrarPaquete" promptText="Selecciona un paquete" />
+                <Label text="Componente" />
+                <ComboBox fx:id="cmbElementos" maxWidth="Infinity" promptText="Servicio, servicio personalizado o paquete" />
+                <Button fx:id="btnAgregar" maxWidth="Infinity" onAction="#agregarAlPaquete" text="Agregar al paquete" />
+                <Label minHeight="-Infinity" text="Un paquete no puede incluirse a sí mismo, ni directa ni indirectamente." wrapText="true" />
+            </VBox>
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <Label text="Componentes del paquete">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TreeView fx:id="arbol" VBox.vgrow="ALWAYS" />
+                <Label fx:id="lblCostoTotal" text="Costo total">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
