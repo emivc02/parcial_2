@@ -3,12 +3,22 @@ package co.edu.uniquindio.poo.parcial2.model;
 public class LegacySupportAdapter implements  ProveedorTecnicos{
     private LegacySupport legacySupport;
 
+    /**
+     * Metodo constructor de la clase LegacySupport
+     * @param legacySupport
+     */
     public LegacySupportAdapter( LegacySupport legacySupport){
         this.legacySupport = legacySupport;
     }
+
+    /**
+     * Sobreescritura del metodo consultarTecnico de la clase LegacySupport
+     * @param especialidad
+     * @return
+     */
     @Override
     public Tecnico consultarTecnico (String especialidad){
-        int codigo = obtenerCodigoEspecialdiad(especialidad);
+        int codigo = obtenerCodigoEspecialidad(especialidad);
         String respuesta = legacySupport.consultarTecnico(codigo);
         String[] partes  = respuesta.split("\\|");
         String idTecnico = partes[0];
@@ -17,6 +27,11 @@ public class LegacySupportAdapter implements  ProveedorTecnicos{
         return new Tecnico (idTecnico, disponible, costoDesplazamiento);
     }
 
+    /**
+     * Metodo que convierte el nombre de la especialidad en el codigo que usa LegacySupport
+     * @param especialidad
+     * @return
+     */
     private int obtenerCodigoEspecialidad (String especialidad){
         int codigo;
         switch (especialidad.toUpperCase()){
