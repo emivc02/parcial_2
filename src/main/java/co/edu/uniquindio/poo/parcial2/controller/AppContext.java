@@ -104,11 +104,9 @@ public class AppContext {
         empresa.agregarElemento(redes);
         empresa.agregarElemento(recuperacion);
 
-        // Servicio personalizado: correctivo con atencion prioritaria y soporte 30 dias
         ElementoServicio correctivoPersonalizado = new SoporteTecnico30Dias(new AtencionPrioritaria(correctivo));
         empresa.agregarElemento(correctivoPersonalizado);
 
-        // Paquete de mantenimiento y paquete empresarial (paquete dentro de paquete)
         PaqueteTecnologico paqueteMantenimiento = new PaqueteTecnologico("Paquete de mantenimiento",
                 new ArrayList<ElementoServicio>());
         paqueteMantenimiento.agregarElemento(preventivo);
@@ -123,15 +121,13 @@ public class AppContext {
         empresa.agregarElemento(paqueteMantenimiento);
         empresa.agregarElemento(paqueteEmpresarial);
 
-        // Clientes
-        Cliente cliente1 = new Cliente("1094567890", "Laura Gómez Ríos", "laura.gomez@correo.com");
-        Cliente cliente2 = new Cliente("1005432109", "Carlos Andrés Pérez", "carlos.perez@correo.com");
-        Cliente cliente3 = new Cliente("41923456", "María Fernanda Ospina", "maria.ospina@correo.com");
+        Cliente cliente1 = new Cliente("1094567890", "Manuel Santiago Rosero", "manueroserogmail.com");
+        Cliente cliente2 = new Cliente("1005432109", "Emily Emilse Velasco", "emilygmail.com");
+        Cliente cliente3 = new Cliente("41923456", "Juan Carlos Paz", "carlospazgmail.com");
         empresa.agregarCliente(cliente1);
         empresa.agregarCliente(cliente2);
         empresa.agregarCliente(cliente3);
 
-        // Solicitud 1: presencial con tecnico disponible (MANTENIMIENTO)
         List<ElementoServicio> elementos1 = new ArrayList<ElementoServicio>();
         elementos1.add(paqueteEmpresarial);
         elementos1.add(correctivoPersonalizado);
@@ -147,7 +143,6 @@ public class AppContext {
                 .build();
         empresa.agregarSolicitud(solicitud1);
 
-        // Solicitud 2: presencial sin tecnico disponible (RECUPERACION)
         List<ElementoServicio> elementos2 = new ArrayList<ElementoServicio>();
         elementos2.add(recuperacion);
         Solicitud solicitud2 = new Solicitud.Builder()
@@ -161,9 +156,9 @@ public class AppContext {
                 .build();
         empresa.agregarSolicitud(solicitud2);
 
-        // Solicitud 3: no presencial
         List<ElementoServicio> elementos3 = new ArrayList<ElementoServicio>();
         elementos3.add(preventivo);
+
         Solicitud solicitud3 = new Solicitud.Builder()
                 .codigo("SOL-003")
                 .fechaCreacion(LocalDate.now())
